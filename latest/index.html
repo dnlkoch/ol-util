@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>@terrestris/ol-util 1.3.0 | Documentation</title>
+  <title>@terrestris/ol-util 1.5.0 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@terrestris/ol-util</h3>
-          <div class='mb1'><code>1.3.0</code></div>
+          <div class='mb1'><code>1.5.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -327,6 +327,12 @@
                         .roundScale
                       </a></li>
                     
+                      <li><a
+                        href='#maputilgetzoomforscale'
+                        class='regular pre-open'>
+                        .getZoomForScale
+                      </a></li>
+                    
                     </ul>
                   
                   
@@ -426,9 +432,9 @@
                     <li class='h5'><span>Static members</span></li>
                     
                       <li><a
-                        href='#projectionutilinitproj4definitions'
+                        href='#projectionutildefaultproj4crsdefinitions'
                         class='regular pre-open'>
-                        .initProj4Definitions
+                        .defaultProj4CrsDefinitions
                       </a></li>
                     
                       <li><a
@@ -443,6 +449,26 @@
                   
                   
                 </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#'
+                  class="">
+                  
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#'
+                  class="">
+                  
+                  
+                </a>
                 
                 </li>
               
@@ -494,7 +520,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/AnimateUtil/AnimateUtil.js#L11-L82'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/AnimateUtil/AnimateUtil.js#L11-L84'>
       <span>src/AnimateUtil/AnimateUtil.js</span>
       </a>
     
@@ -546,7 +572,7 @@ with digitize functions to animate features.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/AnimateUtil/AnimateUtil.js#L23-L81'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/AnimateUtil/AnimateUtil.js#L25-L83'>
       <span>src/AnimateUtil/AnimateUtil.js</span>
       </a>
     
@@ -558,7 +584,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>moveFeature(map: any, featureToMove: any, duration: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, pixel: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>, style: ol.style.Style): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+    <div class='pre p1 fill-light mt0'>moveFeature(map: ol.Map, featureToMove: ol.Feature, duration: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, pixel: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>, style: ol.style.Style): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
    
   
   
@@ -576,23 +602,25 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>map</span> <code class='quiet'>(any)</code>
-	    
+            <span class='code bold'>map</span> <code class='quiet'>(ol.Map)</code>
+	    An OlMap.
+
           </div>
           
         </div>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>featureToMove</span> <code class='quiet'>(any)</code>
-	    
+            <span class='code bold'>featureToMove</span> <code class='quiet'>(ol.Feature)</code>
+	    The feature to move.
+
           </div>
           
         </div>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>duration</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+            <span class='code bold'>duration</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    The duration in ms for the moving to complete.
 
           </div>
@@ -601,7 +629,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>pixel</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>)</code>
+            <span class='code bold'>pixel</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>)</code>
 	    Delta of pixels to move the feature.
 
           </div>
@@ -625,7 +653,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         A listener key from a postcompose event.
 
       
@@ -667,7 +695,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/CapabilitiesUtil/CapabilitiesUtil.js#L12-L64'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/CapabilitiesUtil/CapabilitiesUtil.js#L12-L64'>
       <span>src/CapabilitiesUtil/CapabilitiesUtil.js</span>
       </a>
     
@@ -718,7 +746,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/CapabilitiesUtil/CapabilitiesUtil.js#L20-L27'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/CapabilitiesUtil/CapabilitiesUtil.js#L20-L27'>
       <span>src/CapabilitiesUtil/CapabilitiesUtil.js</span>
       </a>
     
@@ -729,7 +757,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>parseWmsCapabilities(capabilitiesUrl: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+    <div class='pre p1 fill-light mt0'>parseWmsCapabilities(capabilitiesUrl: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
    
   
   
@@ -747,7 +775,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>capabilitiesUrl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>capabilitiesUrl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    Url to WMS capabilities document
 
           </div>
@@ -797,7 +825,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/CapabilitiesUtil/CapabilitiesUtil.js#L37-L63'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/CapabilitiesUtil/CapabilitiesUtil.js#L37-L63'>
       <span>src/CapabilitiesUtil/CapabilitiesUtil.js</span>
       </a>
     
@@ -808,7 +836,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>getLayersFromWmsCapabilties(capabilities: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, nameField: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;OlLayerTile></div>
+    <div class='pre p1 fill-light mt0'>getLayersFromWmsCapabilties(capabilities: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, nameField: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;OlLayerTile></div>
    
   
   
@@ -835,7 +863,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>nameField</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            <span class='code bold'>nameField</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
             = <code>&#39;Name&#39;</code>)</code>
 	    Configure the field which should be set as the
 'name' property in the openlayers layer.
@@ -894,7 +922,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/FeatureUtil/FeatureUtil.js#L10-L102'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/FeatureUtil/FeatureUtil.js#L10-L102'>
       <span>src/FeatureUtil/FeatureUtil.js</span>
       </a>
     
@@ -945,7 +973,7 @@ in the end with given <code>duration</code> in ms, using the given style.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/FeatureUtil/FeatureUtil.js#L21-L26'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/FeatureUtil/FeatureUtil.js#L21-L26'>
       <span>src/FeatureUtil/FeatureUtil.js</span>
       </a>
     
@@ -957,7 +985,7 @@ the feature has an ID in the following structure FEATURETYPE.FEATUREID.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>getFeatureTypeName(feature: ol.Feature): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+    <div class='pre p1 fill-light mt0'>getFeatureTypeName(feature: ol.Feature): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
    
   
   
@@ -991,7 +1019,7 @@ name from.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         The (unqualified) name of the featureType or undefined if
 the name could not be picked.
 
@@ -1027,7 +1055,7 @@ the name could not be picked.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/FeatureUtil/FeatureUtil.js#L46-L101'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/FeatureUtil/FeatureUtil.js#L46-L101'>
       <span>src/FeatureUtil/FeatureUtil.js</span>
       </a>
     
@@ -1041,7 +1069,7 @@ really exists).</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>resolveAttributeTemplate(feature: ol.Feature, template: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, noValueFoundText: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>?, valueAdjust: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+    <div class='pre p1 fill-light mt0'>resolveAttributeTemplate(feature: ol.Feature, template: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, noValueFoundText: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, valueAdjust: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
    
   
   
@@ -1068,7 +1096,7 @@ really exists).</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>template</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>template</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    The template string to resolve.
 
           </div>
@@ -1077,7 +1105,7 @@ really exists).</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>noValueFoundText</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>?
+            <span class='code bold'>noValueFoundText</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
             = <code>&#39;n.v.&#39;</code>)</code>
 	    The text to apply, if the templated value
 could not be found, default is to 'n.v.'.
@@ -1109,7 +1137,7 @@ formatting and such.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         The resolved template string.
 
       
@@ -1151,7 +1179,7 @@ formatting and such.
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/FileUtil/FileUtil.js#L11-L59'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/FileUtil/FileUtil.js#L11-L59'>
       <span>src/FileUtil/FileUtil.js</span>
       </a>
     
@@ -1202,7 +1230,7 @@ formatting and such.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/FileUtil/FileUtil.js#L18-L25'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/FileUtil/FileUtil.js#L18-L25'>
       <span>src/FileUtil/FileUtil.js</span>
       </a>
     
@@ -1282,7 +1310,7 @@ formatting and such.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/FileUtil/FileUtil.js#L32-L41'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/FileUtil/FileUtil.js#L32-L41'>
       <span>src/FileUtil/FileUtil.js</span>
       </a>
     
@@ -1362,7 +1390,7 @@ formatting and such.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/FileUtil/FileUtil.js#L48-L57'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/FileUtil/FileUtil.js#L48-L57'>
       <span>src/FileUtil/FileUtil.js</span>
       </a>
     
@@ -1373,7 +1401,7 @@ formatting and such.
 
  
   
-    <div class='pre p1 fill-light mt0'>addGeojsonLayer(json: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, map: ol.Map)</div>
+    <div class='pre p1 fill-light mt0'>addGeojsonLayer(json: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, map: ol.Map)</div>
    
   
   
@@ -1391,7 +1419,7 @@ formatting and such.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>json</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>json</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    the geojson string
 
           </div>
@@ -1449,7 +1477,7 @@ formatting and such.
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/GeometryUtil/GeometryUtil.js#L23-L371'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/GeometryUtil/GeometryUtil.js#L23-L371'>
       <span>src/GeometryUtil/GeometryUtil.js</span>
       </a>
     
@@ -1500,7 +1528,7 @@ formatting and such.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/GeometryUtil/GeometryUtil.js#L46-L132'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/GeometryUtil/GeometryUtil.js#L46-L132'>
       <span>src/GeometryUtil/GeometryUtil.js</span>
       </a>
     
@@ -1605,7 +1633,7 @@ with/or ol.geom.Polygon
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/GeometryUtil/GeometryUtil.js#L147-L166'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/GeometryUtil/GeometryUtil.js#L147-L166'>
       <span>src/GeometryUtil/GeometryUtil.js</span>
       </a>
     
@@ -1618,7 +1646,7 @@ If the target is of type ol.geom.Geometry it will return ol.geom.Geometry.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>addBuffer(geometry: (ol.geom.Geometry | ol.Feature), radius: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, projection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): (ol.geom.Geometry | ol.Feature)</div>
+    <div class='pre p1 fill-light mt0'>addBuffer(geometry: (ol.geom.Geometry | ol.Feature), radius: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, projection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): (ol.geom.Geometry | ol.Feature)</div>
    
   
   
@@ -1645,7 +1673,7 @@ If the target is of type ol.geom.Geometry it will return ol.geom.Geometry.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>radius</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            <span class='code bold'>radius</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>0</code>)</code>
 	    The buffer to add in meters.
 
@@ -1655,7 +1683,7 @@ If the target is of type ol.geom.Geometry it will return ol.geom.Geometry.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>projection</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            <span class='code bold'>projection</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
             = <code>&#39;EPSG:3857&#39;</code>)</code>
 	    The projection of the input geometry as EPSG code.
 Default is to EPSG:3857.
@@ -1707,7 +1735,7 @@ Default is to EPSG:3857.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/GeometryUtil/GeometryUtil.js#L174-L216'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/GeometryUtil/GeometryUtil.js#L174-L216'>
       <span>src/GeometryUtil/GeometryUtil.js</span>
       </a>
     
@@ -1786,7 +1814,7 @@ Default is to EPSG:3857.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/GeometryUtil/GeometryUtil.js#L227-L254'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/GeometryUtil/GeometryUtil.js#L227-L254'>
       <span>src/GeometryUtil/GeometryUtil.js</span>
       </a>
     
@@ -1867,7 +1895,7 @@ into an array of single geometries.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/GeometryUtil/GeometryUtil.js#L266-L292'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/GeometryUtil/GeometryUtil.js#L266-L292'>
       <span>src/GeometryUtil/GeometryUtil.js</span>
       </a>
     
@@ -1878,7 +1906,7 @@ into an array of single geometries.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>union(polygons: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ol.geom.Geometry> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ol.Feature>), projection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): (ol.geom.Geometry | ol.Feature)</div>
+    <div class='pre p1 fill-light mt0'>union(polygons: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ol.geom.Geometry> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ol.Feature>), projection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): (ol.geom.Geometry | ol.Feature)</div>
    
   
   
@@ -1906,7 +1934,7 @@ or ol.geom.Geometry instances of type (Multi-)polygon.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>projection</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            <span class='code bold'>projection</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
             = <code>&#39;EPSG:3857&#39;</code>)</code>
 	    The projection of the input polygons as EPSG code.
 Default is to EPSG:3857.
@@ -1959,7 +1987,7 @@ combined area of the (Multi-)polygons.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/GeometryUtil/GeometryUtil.js#L306-L328'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/GeometryUtil/GeometryUtil.js#L306-L328'>
       <span>src/GeometryUtil/GeometryUtil.js</span>
       </a>
     
@@ -1970,7 +1998,7 @@ combined area of the (Multi-)polygons.
 
  
   
-    <div class='pre p1 fill-light mt0'>difference(polygon1: (ol.geom.Geometry | ol.Feature), polygon2: (ol.geom.Geometry | ol.Feature), projection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): (ol.geom.Geometry | ol.Feature)</div>
+    <div class='pre p1 fill-light mt0'>difference(polygon1: (ol.geom.Geometry | ol.Feature), polygon2: (ol.geom.Geometry | ol.Feature), projection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): (ol.geom.Geometry | ol.Feature)</div>
    
   
   
@@ -2006,7 +2034,7 @@ combined area of the (Multi-)polygons.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>projection</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            <span class='code bold'>projection</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
             = <code>&#39;EPSG:3857&#39;</code>)</code>
 	    The projection of the input polygons as EPSG code.
 Default is to EPSG:3857.
@@ -2060,7 +2088,7 @@ of polygon1 excluding the area of polygon2. The type of the first polygon
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/GeometryUtil/GeometryUtil.js#L344-L369'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/GeometryUtil/GeometryUtil.js#L344-L369'>
       <span>src/GeometryUtil/GeometryUtil.js</span>
       </a>
     
@@ -2073,7 +2101,7 @@ If the polygons are of type ol.geom.Geometry it will return an ol.geom.Geometry.
 
  
   
-    <div class='pre p1 fill-light mt0'>intersection(polygon1: (ol.geom.Geometry | ol.Feature), polygon2: (ol.geom.Geometry | ol.Feature), projection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): (ol.geom.Geometry | ol.Feature)</div>
+    <div class='pre p1 fill-light mt0'>intersection(polygon1: (ol.geom.Geometry | ol.Feature), polygon2: (ol.geom.Geometry | ol.Feature), projection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): (ol.geom.Geometry | ol.Feature)</div>
    
   
   
@@ -2109,7 +2137,7 @@ If the polygons are of type ol.geom.Geometry it will return an ol.geom.Geometry.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>projection</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            <span class='code bold'>projection</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
             = <code>&#39;EPSG:3857&#39;</code>)</code>
 	    The projection of the input polygons as EPSG code.
 Default is to EPSG:3857.
@@ -2169,7 +2197,7 @@ shared area of the two polygons or null if the polygons don't intersect.
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L18-L395'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L20-L429'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -2220,7 +2248,7 @@ shared area of the two polygons or null if the polygons don't intersect.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L27-L44'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L29-L46'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -2231,7 +2259,7 @@ shared area of the two polygons or null if the polygons don't intersect.
 
  
   
-    <div class='pre p1 fill-light mt0'>getInteractionsByName(map: ol.Map, name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ol.interaction></div>
+    <div class='pre p1 fill-light mt0'>getInteractionsByName(map: ol.Map, name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ol.interaction></div>
    
   
   
@@ -2258,7 +2286,7 @@ shared area of the two polygons or null if the polygons don't intersect.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    The name of the interaction to look for.
 
           </div>
@@ -2308,7 +2336,7 @@ shared area of the two polygons or null if the polygons don't intersect.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L53-L70'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L55-L72'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -2396,7 +2424,7 @@ shared area of the two polygons or null if the polygons don't intersect.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L85-L91'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L87-L93'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -2410,7 +2438,7 @@ how-to-get-current-scale-in-openlayers-3</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>getResolutionForScale(scale: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, units: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+    <div class='pre p1 fill-light mt0'>getResolutionForScale(scale: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, units: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
    
   
   
@@ -2428,7 +2456,7 @@ how-to-get-current-scale-in-openlayers-3</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>scale</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+            <span class='code bold'>scale</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    The input scale to calculate the appropriate
 resolution for.
 
@@ -2438,7 +2466,7 @@ resolution for.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>units</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>units</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    The units to use for calculation (m or degrees).
 
           </div>
@@ -2453,7 +2481,7 @@ resolution for.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         The calculated resolution.
 
       
@@ -2488,7 +2516,7 @@ resolution for.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L102-L108'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L104-L110'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -2499,7 +2527,7 @@ resolution for.
 
  
   
-    <div class='pre p1 fill-light mt0'>getScaleForResolution(resolution: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, units: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+    <div class='pre p1 fill-light mt0'>getScaleForResolution(resolution: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, units: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
    
   
   
@@ -2517,7 +2545,7 @@ resolution for.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>resolution</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+            <span class='code bold'>resolution</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    The resolutions to calculate the scale for.
 
           </div>
@@ -2526,7 +2554,7 @@ resolution for.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>units</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>units</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    The units the resolution is based on, typically
 either 'm' or 'degrees'.
 
@@ -2542,7 +2570,7 @@ either 'm' or 'degrees'.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         The appropriate scale.
 
       
@@ -2577,7 +2605,7 @@ either 'm' or 'degrees'.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L121-L144'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L123-L146'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -2588,7 +2616,7 @@ either 'm' or 'degrees'.
 
  
   
-    <div class='pre p1 fill-light mt0'>getAllLayers(collection: (ol.Map | ol.layer.Group), filter: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>getAllLayers(collection: (ol.Map | ol.layer.Group), filter: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
    
   
   
@@ -2617,7 +2645,7 @@ or an ol.Map.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>filter</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?
+            <span class='code bold'>filter</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>?
             = <code>()=&gt;true</code>)</code>
 	    A filter function that receives the layer.
 If it returns true it will be included in the
@@ -2670,7 +2698,7 @@ returned layers.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L153-L159'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L155-L161'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -2708,7 +2736,7 @@ returned layers.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>ol_uid</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>ol_uid</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    The ol_uid of a layer.
 
           </div>
@@ -2758,7 +2786,7 @@ returned layers.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L169-L174'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L171-L176'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -2769,7 +2797,7 @@ returned layers.
 
  
   
-    <div class='pre p1 fill-light mt0'>getLayerByName(map: ol.Map, name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): ol.Layer</div>
+    <div class='pre p1 fill-light mt0'>getLayerByName(map: ol.Map, name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): ol.Layer</div>
    
   
   
@@ -2796,7 +2824,7 @@ returned layers.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    The name to get the layer by.
 
           </div>
@@ -2847,7 +2875,7 @@ be found.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L185-L199'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L187-L201'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -2859,7 +2887,7 @@ be found.
 
  
   
-    <div class='pre p1 fill-light mt0'>getLayerByNameParam(map: ol.Map, name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): ol.Layer</div>
+    <div class='pre p1 fill-light mt0'>getLayerByNameParam(map: ol.Map, name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): ol.Layer</div>
    
   
   
@@ -2886,7 +2914,7 @@ be found.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    The name to get the layer by.
 
           </div>
@@ -2937,7 +2965,7 @@ be found.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L210-L224'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L212-L226'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -3035,7 +3063,7 @@ be found.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L233-L245'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L235-L247'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -3123,7 +3151,7 @@ be found.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L256-L262'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L258-L264'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -3134,7 +3162,7 @@ be found.
 
  
   
-    <div class='pre p1 fill-light mt0'>getLayersByProperty(map: ol.Map, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, value: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ol.layer.Base></div>
+    <div class='pre p1 fill-light mt0'>getLayersByProperty(map: ol.Map, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, value: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ol.layer.Base></div>
    
   
   
@@ -3161,7 +3189,7 @@ be found.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    The property key.
 
           </div>
@@ -3220,7 +3248,7 @@ be found.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L274-L292'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L276-L294'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -3311,7 +3339,7 @@ containing the layer.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L303-L340'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L305-L342'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -3327,7 +3355,7 @@ Currently supported Sources:</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>getLegendGraphicUrl(layer: ol.layer.Layer, extraParams: any): (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>)</div>
+    <div class='pre p1 fill-light mt0'>getLegendGraphicUrl(layer: ol.layer.Layer, extraParams: any): (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>)</div>
    
   
   
@@ -3368,7 +3396,7 @@ Currently supported Sources:</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>)</code>:
+      <code>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>)</code>:
         The getLegendGraphicUrl.
 
       
@@ -3403,7 +3431,7 @@ Currently supported Sources:</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L356-L369'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L358-L371'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -3416,7 +3444,7 @@ be displayed at the current map view resolution.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>layerInResolutionRange(layer: ol.layer.Layer, map: ol.Map): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
+    <div class='pre p1 fill-light mt0'>layerInResolutionRange(layer: ol.layer.Layer, map: ol.Map): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
    
   
   
@@ -3459,7 +3487,7 @@ from.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
         Whether the resolution of the passed map's view lies
 inside of the min- and max-resolution of the passed layer, e.g. whether
 the layer should be displayed at the current map view resolution. Will
@@ -3504,7 +3532,7 @@ map is falsy or does not have a resolution (yet).
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MapUtil/MapUtil.js#L378-L393'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L380-L395'>
       <span>src/MapUtil/MapUtil.js</span>
       </a>
     
@@ -3515,7 +3543,7 @@ map is falsy or does not have a resolution (yet).
 
  
   
-    <div class='pre p1 fill-light mt0'>roundScale(scale: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+    <div class='pre p1 fill-light mt0'>roundScale(scale: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
    
   
   
@@ -3533,7 +3561,7 @@ map is falsy or does not have a resolution (yet).
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>scale</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+            <span class='code bold'>scale</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    The exact scale
 
           </div>
@@ -3548,8 +3576,107 @@ map is falsy or does not have a resolution (yet).
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         The roundedScale
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='maputilgetzoomforscale'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getZoomForScale(scale, resolutions, units)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MapUtil/MapUtil.js#L408-L428'>
+      <span>src/MapUtil/MapUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the appropriate zoom level for the given scale and units.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getZoomForScale(scale: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, resolutions: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>, units: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>scale</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    Map scale to get the zoom for.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>resolutions</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    Resolutions array.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>units</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;m&#39;</code>)</code>
+	    The units the resolutions are based on, typically
+either 'm' or 'degrees'. Default is 'm'.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        Determined zoom level for the given scale.
 
       
     
@@ -3590,7 +3717,7 @@ map is falsy or does not have a resolution (yet).
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MeasureUtil/MeasureUtil.js#L10-L216'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MeasureUtil/MeasureUtil.js#L10-L216'>
       <span>src/MeasureUtil/MeasureUtil.js</span>
       </a>
     
@@ -3642,7 +3769,7 @@ with measurements.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MeasureUtil/MeasureUtil.js#L23-L33'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MeasureUtil/MeasureUtil.js#L23-L33'>
       <span>src/MeasureUtil/MeasureUtil.js</span>
       </a>
     
@@ -3653,7 +3780,7 @@ with measurements.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>getLength(line: OlGeomLineString, map: OlMap, geodesic: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>, radius: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+    <div class='pre p1 fill-light mt0'>getLength(line: OlGeomLineString, map: OlMap, geodesic: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, radius: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
    
   
   
@@ -3689,7 +3816,7 @@ with measurements.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>geodesic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+            <span class='code bold'>geodesic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
             = <code>true</code>)</code>
 	    Is the measurement geodesic (default is true).
 
@@ -3699,7 +3826,7 @@ with measurements.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>radius</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            <span class='code bold'>radius</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>6371008.8</code>)</code>
 	    Sphere radius. By default, the radius of the earth
 is used (Clarke 1866 Authalic Sphere, 6371008.8).
@@ -3716,7 +3843,7 @@ is used (Clarke 1866 Authalic Sphere, 6371008.8).
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         The length of line in meters.
 
       
@@ -3751,7 +3878,7 @@ is used (Clarke 1866 Authalic Sphere, 6371008.8).
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MeasureUtil/MeasureUtil.js#L46-L58'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MeasureUtil/MeasureUtil.js#L46-L58'>
       <span>src/MeasureUtil/MeasureUtil.js</span>
       </a>
     
@@ -3762,7 +3889,7 @@ is used (Clarke 1866 Authalic Sphere, 6371008.8).
 
  
   
-    <div class='pre p1 fill-light mt0'>formatLength(line: OlGeomLineString, map: OlMap, decimalPlacesInToolTips: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, geodesic: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+    <div class='pre p1 fill-light mt0'>formatLength(line: OlGeomLineString, map: OlMap, decimalPlacesInToolTips: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, geodesic: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
    
   
   
@@ -3798,7 +3925,7 @@ is used (Clarke 1866 Authalic Sphere, 6371008.8).
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>decimalPlacesInToolTips</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+            <span class='code bold'>decimalPlacesInToolTips</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    How many decimal places will be
 allowed for the measure tooltips
 
@@ -3808,7 +3935,7 @@ allowed for the measure tooltips
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>geodesic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+            <span class='code bold'>geodesic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
             = <code>true</code>)</code>
 	    Is the measurement geodesic (default is true).
 
@@ -3824,7 +3951,7 @@ allowed for the measure tooltips
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         The formatted length of the line.
 
       
@@ -3859,7 +3986,7 @@ allowed for the measure tooltips
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MeasureUtil/MeasureUtil.js#L71-L81'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MeasureUtil/MeasureUtil.js#L71-L81'>
       <span>src/MeasureUtil/MeasureUtil.js</span>
       </a>
     
@@ -3870,7 +3997,7 @@ allowed for the measure tooltips
 
  
   
-    <div class='pre p1 fill-light mt0'>getArea(polygon: OlGeomPolygon, map: OlMap, geodesic: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>, radius: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+    <div class='pre p1 fill-light mt0'>getArea(polygon: OlGeomPolygon, map: OlMap, geodesic: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, radius: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
    
   
   
@@ -3906,7 +4033,7 @@ allowed for the measure tooltips
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>geodesic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+            <span class='code bold'>geodesic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
             = <code>true</code>)</code>
 	    Is the measurement geodesic (default is true).
 
@@ -3916,7 +4043,7 @@ allowed for the measure tooltips
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>radius</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            <span class='code bold'>radius</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>6371008.8</code>)</code>
 	    Sphere radius. By default, the radius of the earth
 is used (Clarke 1866 Authalic Sphere, 6371008.8).
@@ -3933,7 +4060,7 @@ is used (Clarke 1866 Authalic Sphere, 6371008.8).
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         The area of the polygon in square meter.
 
       
@@ -3968,7 +4095,7 @@ is used (Clarke 1866 Authalic Sphere, 6371008.8).
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MeasureUtil/MeasureUtil.js#L94-L106'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MeasureUtil/MeasureUtil.js#L94-L106'>
       <span>src/MeasureUtil/MeasureUtil.js</span>
       </a>
     
@@ -3979,7 +4106,7 @@ is used (Clarke 1866 Authalic Sphere, 6371008.8).
 
  
   
-    <div class='pre p1 fill-light mt0'>formatArea(polygon: OlGeomPolygon, map: OlMap, decimalPlacesInToolTips: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, geodesic: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+    <div class='pre p1 fill-light mt0'>formatArea(polygon: OlGeomPolygon, map: OlMap, decimalPlacesInToolTips: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, geodesic: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
    
   
   
@@ -4015,7 +4142,7 @@ is used (Clarke 1866 Authalic Sphere, 6371008.8).
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>decimalPlacesInToolTips</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+            <span class='code bold'>decimalPlacesInToolTips</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    How many decimal places will be
 allowed for the measure tooltips.
 
@@ -4025,7 +4152,7 @@ allowed for the measure tooltips.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>geodesic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+            <span class='code bold'>geodesic</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
             = <code>true</code>)</code>
 	    Is the measurement geodesic.
 
@@ -4041,7 +4168,7 @@ allowed for the measure tooltips.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         The formatted area of the polygon.
 
       
@@ -4076,7 +4203,7 @@ allowed for the measure tooltips.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MeasureUtil/MeasureUtil.js#L122-L130'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MeasureUtil/MeasureUtil.js#L122-L130'>
       <span>src/MeasureUtil/MeasureUtil.js</span>
       </a>
     
@@ -4090,7 +4217,7 @@ counter-clockwise.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>angle(start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+    <div class='pre p1 fill-light mt0'>angle(start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
    
   
   
@@ -4108,7 +4235,7 @@ counter-clockwise.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>)</code>
+            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>)</code>
 	    The start coordinates of the line with the
 x-coordinate being at index 
 <code>0</code>
@@ -4122,7 +4249,7 @@ x-coordinate being at index
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>)</code>
+            <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>)</code>
 	    The end coordinates of the line with the
 x-coordinate being at index 
 <code>0</code>
@@ -4142,7 +4269,7 @@ x-coordinate being at index
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         the angle in degreees, ranging from -180° to 180°.
 
       
@@ -4177,7 +4304,7 @@ x-coordinate being at index
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MeasureUtil/MeasureUtil.js#L146-L154'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MeasureUtil/MeasureUtil.js#L146-L154'>
       <span>src/MeasureUtil/MeasureUtil.js</span>
       </a>
     
@@ -4191,7 +4318,7 @@ counter-clockwise.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>angle360(start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+    <div class='pre p1 fill-light mt0'>angle360(start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
    
   
   
@@ -4209,7 +4336,7 @@ counter-clockwise.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>)</code>
+            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>)</code>
 	    The start coordinates of the line with the
 x-coordinate being at index 
 <code>0</code>
@@ -4223,7 +4350,7 @@ x-coordinate being at index
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>)</code>
+            <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>)</code>
 	    The end coordinates of the line with the
 x-coordinate being at index 
 <code>0</code>
@@ -4243,7 +4370,7 @@ x-coordinate being at index
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         the angle in degrees, ranging from 0° and 360°.
 
       
@@ -4278,7 +4405,7 @@ x-coordinate being at index
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MeasureUtil/MeasureUtil.js#L165-L167'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MeasureUtil/MeasureUtil.js#L165-L167'>
       <span>src/MeasureUtil/MeasureUtil.js</span>
       </a>
     
@@ -4291,7 +4418,7 @@ the direction of the angle from counter-clockwise to clockwise.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>makeClockwise(angle360: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+    <div class='pre p1 fill-light mt0'>makeClockwise(angle360: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
    
   
   
@@ -4309,7 +4436,7 @@ the direction of the angle from counter-clockwise to clockwise.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>angle360</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+            <span class='code bold'>angle360</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    The input angle obtained counter-clockwise.
 
           </div>
@@ -4324,7 +4451,7 @@ the direction of the angle from counter-clockwise to clockwise.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         The clockwise angle.
 
       
@@ -4359,7 +4486,7 @@ the direction of the angle from counter-clockwise to clockwise.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MeasureUtil/MeasureUtil.js#L178-L184'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MeasureUtil/MeasureUtil.js#L178-L184'>
       <span>src/MeasureUtil/MeasureUtil.js</span>
       </a>
     
@@ -4371,7 +4498,7 @@ angle of a line so that the origin (0°) lies at the top (in the north).</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>makeZeroDegreesAtNorth(angle360: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+    <div class='pre p1 fill-light mt0'>makeZeroDegreesAtNorth(angle360: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
    
   
   
@@ -4389,7 +4516,7 @@ angle of a line so that the origin (0°) lies at the top (in the north).</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>angle360</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+            <span class='code bold'>angle360</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    The input angle obtained counter-clockwise, with
 0° degrees being in the east.
 
@@ -4405,7 +4532,7 @@ angle of a line so that the origin (0°) lies at the top (in the north).</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         The adjusted angle, with 0° being in the north.
 
       
@@ -4440,7 +4567,7 @@ angle of a line so that the origin (0°) lies at the top (in the north).</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/MeasureUtil/MeasureUtil.js#L198-L214'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/MeasureUtil/MeasureUtil.js#L198-L214'>
       <span>src/MeasureUtil/MeasureUtil.js</span>
       </a>
     
@@ -4452,7 +4579,7 @@ angle of a line so that the origin (0°) lies at the top (in the north).</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>formatAngle(line: OlGeomLineString, decimalPlacesInToolTips: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></div>
+    <div class='pre p1 fill-light mt0'>formatAngle(line: OlGeomLineString, decimalPlacesInToolTips: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
    
   
   
@@ -4481,7 +4608,7 @@ interaction, we know that it will only consist of two points.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>decimalPlacesInToolTips</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            <span class='code bold'>decimalPlacesInToolTips</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>2</code>)</code>
 	    How many decimal places will be
 allowed for the measure tooltips.
@@ -4498,7 +4625,7 @@ allowed for the measure tooltips.
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         The formatted angle of the line.
 
       
@@ -4540,7 +4667,7 @@ allowed for the measure tooltips.
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/ProjectionUtil/ProjectionUtil.js#L9-L38'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/ProjectionUtil/ProjectionUtil.js#L11-L100'>
       <span>src/ProjectionUtil/ProjectionUtil.js</span>
       </a>
     
@@ -4577,11 +4704,11 @@ allowed for the measure tooltips.
     <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class="clearfix">
   
-    <div class='border-bottom' id='projectionutilinitproj4definitions'>
+    <div class='border-bottom' id='projectionutildefaultproj4crsdefinitions'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>initProj4Definitions(proj4CrsDefinitions)</span>
+            <span class='code strong strong truncate'>defaultProj4CrsDefinitions</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -4591,18 +4718,18 @@ allowed for the measure tooltips.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/ProjectionUtil/ProjectionUtil.js#L16-L21'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/ProjectionUtil/ProjectionUtil.js#L16-L20'>
       <span>src/ProjectionUtil/ProjectionUtil.js</span>
       </a>
     
   </div>
   
 
-  <p>Registers custom crs definitions to the application.</p>
+  <p>Default proj4 CRS definitions.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>initProj4Definitions(proj4CrsDefinitions: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+    <div class='pre p1 fill-light mt0'>defaultProj4CrsDefinitions</div>
    
   
   
@@ -4614,20 +4741,6 @@ allowed for the measure tooltips.
   
   
 
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>proj4CrsDefinitions</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    The (custom) proj4 definition strings.
-
-          </div>
-          
-        </div>
-      
-    </div>
   
 
   
@@ -4652,7 +4765,7 @@ allowed for the measure tooltips.
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>initProj4DefinitionMappings(proj4CrsMappings)</span>
+            <span class='code strong strong truncate'>initProj4DefinitionMappings(customCrsMappings, useDefaultMappings)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -4662,22 +4775,22 @@ allowed for the measure tooltips.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/ProjectionUtil/ProjectionUtil.js#L32-L36'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/ProjectionUtil/ProjectionUtil.js#L79-L99'>
       <span>src/ProjectionUtil/ProjectionUtil.js</span>
       </a>
     
   </div>
   
 
-  <p>Registers custom crs mappings to allow automatic crs detection. Sometimes
+  <p>Registers custom CRS mappings to allow automatic CRS detection. Sometimes
 FeatureCollections returned by the GeoServer may be associated with
-crs identifiers (e.g. "urn:ogc:def:crs:EPSG::25832") that aren't
-supported by proj4 and/or ol per default. Add appropriate
-mappings to allow automatic crs detection by ol here.</p>
+CRS identifiers (e.g. "urn:ogc:def:crs:EPSG::25832") that aren't
+supported by <code>proj4</code> and <code>OpenLayers</code> per default. Add appropriate
+mappings to allow automatic CRS detection by <code>OpenLayers</code> here.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>initProj4DefinitionMappings(proj4CrsMappings: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+    <div class='pre p1 fill-light mt0'>initProj4DefinitionMappings(customCrsMappings: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, useDefaultMappings: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</div>
    
   
   
@@ -4695,8 +4808,23 @@ mappings to allow automatic crs detection by ol here.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>proj4CrsMappings</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    The crs mappings.
+            <span class='code bold'>customCrsMappings</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The custom CRS mappings which will be
+added additionally to the by default avaliable (s. 
+<code>defaultProj4CrsMappings</code>
+
+above).
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>useDefaultMappings</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
+            = <code>true</code>)</code>
+	    Whether the default CRS should be mapped
+as well or not. Default is true.
 
           </div>
           
@@ -4739,12 +4867,152 @@ mappings to allow automatic crs detection by ol here.</p>
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id=''>
+      
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/ProjectionUtil/ProjectionUtil.js#L16-L20'>
+      <span>src/ProjectionUtil/ProjectionUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Default mappings for CRS identifiers (e.g. "urn:ogc:def:crs:EPSG::25832").</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id=''>
+      
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/ProjectionUtil/ProjectionUtil.js#L25-L30'>
+      <span>src/ProjectionUtil/ProjectionUtil.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Registers custom CRS definitions to the application.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>customCrsDefs</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    The custom 
+<code>proj4</code>
+ definition strings
+which should be registered additionally to default avaliable CRS (s.
+
+<code>defaultProj4CrsDefinitions</code>
+ above) as well.
+Further CRS definitions in proj4 format can be checked under
+
+<a href="http://epsg.io">http://epsg.io</a>
+ (e.g. 
+<a href="http://epsg.io/3426.proj4">http://epsg.io/3426.proj4</a>
+).
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>registerDefaults</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+	    Whether the default CRS should be
+registered or not. Default is true.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='wfsfilterutil'>
       WfsFilterUtil
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/WfsFilterUtil/WfsFilterUtil.js#L14-L137'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/WfsFilterUtil/WfsFilterUtil.js#L14-L138'>
       <span>src/WfsFilterUtil/WfsFilterUtil.js</span>
       </a>
     
@@ -4795,7 +5063,7 @@ mappings to allow automatic crs detection by ol here.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/31b8a64ab506119b63a7d7ae282bb33724e7e0c9/src/WfsFilterUtil/WfsFilterUtil.js#L89-L136'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/dnlkoch/ol-util/blob/7bbbccd0a58f02f675e2fd73b941992bf27d752b/src/WfsFilterUtil/WfsFilterUtil.js#L90-L137'>
       <span>src/WfsFilterUtil/WfsFilterUtil.js</span>
       </a>
     
@@ -4807,7 +5075,7 @@ applies related filter encoding on it.</p>
 
  
   
-    <div class='pre p1 fill-light mt0'>getCombinedRequests(searchOpts: any, searchTerm: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</div>
+    <div class='pre p1 fill-light mt0'>getCombinedRequests(searchOpts: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, searchTerm: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</div>
    
   
   
@@ -4825,15 +5093,37 @@ applies related filter encoding on it.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>searchOpts</span> <code class='quiet'>(any)</code>
-	    
+            <span class='code bold'>searchOpts</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    Search options object which has the following
+keys (see also 
+<a href="https://github.com/terrestris/react-geo/blob/master/src/Field/WfsSearch/">https://github.com/terrestris/react-geo/blob/master/src/Field/WfsSearch/</a>
+
+for further options explanations and examples):
+<ul>
+<li>featureNS        {String}   The namespace URI used for features</li>
+<li>featurePrefix    {String}   The prefix for the feature namespace.</li>
+<li>featureTypes     {String[]} The feature type names to search through.</li>
+<li>geometryName     {String}   Geometry name to use in a BBOX filter.</li>
+<li>maxFeatures      {Number}   Maximum number of features to fetch.</li>
+<li>outputFormat     {String}   The output format of the response.</li>
+<li>propertyNames    {String[]} Optional list of property names to serialize.</li>
+<li>srsName          {String}   SRS name.</li>
+<li>wfsFormatOptions {Object}   Options which are passed to the constructor of the ol.format.WFS
+(compare: <a href="https://openlayers.org/en/latest/apidoc/ol.format.WFS.html">https://openlayers.org/en/latest/apidoc/ol.format.WFS.html</a>)</li>
+<li>searchAttributes {Object}   An object mapping feature types to an array
+of attributes that should be searched through.</li>
+<li>attributeDetails {Object}   A nested object mapping feature types to an
+object of attribute details, which are also
+mapped by search attribute name.</li>
+</ul>
+
           </div>
           
         </div>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>searchTerm</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+            <span class='code bold'>searchTerm</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    Search string to be used with filter.
 
           </div>
